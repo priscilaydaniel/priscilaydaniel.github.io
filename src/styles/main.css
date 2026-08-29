@@ -1,0 +1,119 @@
+@import 'normalize.css';
+@import 'fonts.css';
+@import 'global.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Forum&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&family=Parisienne&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+:root {
+  font-family: 'Aleo', Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* CSS HEX */
+  --pomp-and-power: #c9a2bf;
+  --pomp-and-power-middle: #805976;
+  --pomp-and-power-dark: #724c75ff;
+  --pomp-and-power-darker: rgb(145, 94, 156);
+
+  --old-rose: #c98686ff;
+  --fawn: #f2b880ff;
+  --seashell: #fff4ecff;
+  --champagne-pink: #e7cfbcff;
+
+  /* CSS HSL */
+  /* --pomp-and-power: hsla(292, 20%, 52%, 1);
+  --old-rose: hsla(0, 38%, 66%, 1);
+  --fawn: hsla(29, 81%, 73%, 1);
+  --seashell: hsla(25, 100%, 96%, 1);
+  --champagne-pink: hsla(27, 47%, 82%, 1); */
+
+  --text-color-primary: #414042;
+  --card-border: var(--pomp-and-power-middle);
+  --play-background: var(--pomp-and-power-dark);
+
+  --button-color-primary: var(--pomp-and-power-middle);
+  --link-color-primary: var(--pomp-and-power-middle);
+  --button-color-primary-hover: var(--pomp-and-power-dark);
+  --link-color-primary-hover: var(--pomp-and-power-dark);
+
+  --vertical-line-color-primary: var(--pomp-and-power-middle);
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+
+p,
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:hover,
+a:active,
+a:focus,
+button,
+input,
+button:hover,
+button:active,
+button:focus,
+input:focus,
+input:active {
+  text-decoration: none;
+  outline: none;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: '';
+}

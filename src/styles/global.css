@@ -1,0 +1,84 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-image: url('../assets/img/background.webp');
+  background-repeat: repeat;
+}
+
+.wedding-section-title {
+  font-family: 'Merienda', cursive;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+}
+
+.wedding-title-handwriting {
+  font-size: 2.6em;
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  color: var(--text-color-primary);
+}
+
+.header-image-with-frame {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  --s: 8px;
+  /* control the size */
+  padding: var(--s);
+  border: calc(2 * var(--s)) solid #0000;
+  outline: 1px solid var(--pomp-and-power-dark);
+  outline-offset: calc(-1 * var(--s));
+  background: conic-gradient(
+    from 90deg at 2px 2px,
+    #0000 25%,
+    var(--pomp-and-power-middle) 0
+  );
+}
+
+.header-image-with-space {
+  margin: 0.4em;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-image-pre-wedding-photo {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.vertical-flip {
+  transform: scaleY(-1);
+}
+
+.horizontal-flip {
+  transform: scaleX(-1);
+}
