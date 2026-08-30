@@ -48,7 +48,7 @@
 
         <div class="header-couple-names-container">
           <div class="header-couple-first-name">
-            <span>Lidia &</span>
+            <span>Priscila &</span>
             <span></span>
           </div>
           <div class="header-couple-second-name">
