@@ -37,7 +37,7 @@
           Nos encantaría contar contigo en este día tan especial. Lo ideal sería
           que nos confirmes lo antes posible para poder planear la mejor fiesta,
           pero si necesitas tiempo, te pedimos que nos lo comuniques antes del 3
-          de octubre.
+          de Noviembre.
         </p>
       </div>
     </div>

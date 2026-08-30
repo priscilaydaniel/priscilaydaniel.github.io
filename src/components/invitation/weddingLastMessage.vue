@@ -27,7 +27,7 @@ import { ref, computed } from 'vue'
 import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
 import flowerFooter from '@/assets/flowers/flor-wedding-footer.webp'
 
-const WEDDING_DATE = '2024-10-12'
+const WEDDING_DATE = '2026-11-20'
 
 const daysLeftToWedding = ref(daysUntil(WEDDING_DATE))
 

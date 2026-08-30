@@ -60,7 +60,7 @@
     </div>
     <div class="header-header-main-bottom">
       <div class="header-date-info">
-        <span class="date-month">NOVIEMBRE </span>
+        <span class="date-month">NOVIEMBRE</span>
         <div class="grid-container header-date-central">
           <div class="grid-item day-week">
             <div class="lines-top-bottom">
