@@ -9,8 +9,6 @@
   <WeddingGift></WeddingGift>
   <WeddingPlaylist />
   <WeddingLastMessage />
-
-  <WeddingSongPlayer />
 </template>
 
 <script setup>
@@ -20,7 +18,6 @@ import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
 import WeddingPlaylist from './weddingPlaylist.vue'
 import WeddingHeader from './weddingHeader.vue'
-import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingComeTo from './weddingComeTo.vue'
 import WeddingLastMessage from './weddingLastMessage.vue'

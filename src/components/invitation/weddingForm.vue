@@ -15,7 +15,7 @@
               v-model="formData.numberPeople"
               :options="numberPeople"
               default-value="1"
-              label="¿Cuántas personas seréis?"
+              label="¿Cuántas personas son?"
             />
           </div>
 
@@ -31,7 +31,6 @@
             <WeddingTextarea
               v-model="formData.message"
               label="¿Quieres decirnos algo más?"
-              description="Por favor, indícanos cualquier preferencia alimentaria o necesidad especial que debamos tener en cuenta. Por ejemplo, si eres vegano, vegetariano, tienes alguna alergia alimentaria o estás embarazada."
             />
           </div>
 
@@ -59,8 +58,6 @@
 <script setup>
 import preboda2 from '@/assets/preboda/preboda_2.jpeg'
 import { ref } from 'vue'
-import { initializeApp } from 'firebase/app'
-import { getFirestore, addDoc, collection } from 'firebase/firestore'
 
 import WeddingInput from '../ui/weddingInput.vue'
 import WeddingSelect from '../ui/weddingSelect.vue'
@@ -81,49 +78,42 @@ const numberPeople = [
   { label: 'Seremos 2', value: 2 },
 ]
 
-const submitForm = async () => {
-  try {
-    const infoGuest = {
-      name: formData.value.fullName,
-      number: formData.value.numberPeople,
-      message: formData.value.message,
-      song: formData.value.songField,
-    }
+const submitForm = () => {
+  const phone = import.meta.env.VITE_WHATSAPP_PHONE || '5216623616028'
 
-    await addDoc(collection(db, 'guests'), infoGuest)
+  const peopleText =
+    formData.value.numberPeople === 1
+      ? '1 (Solo yo)'
+      : `${formData.value.numberPeople} personas`
 
-    if (window.gtag) {
-      window.gtag('event', 'Form', {
-        event_category: 'Form',
-        event_label: 'Guest Info',
-        value: infoGuest,
-      })
-    }
+  let messageText = `¡Hola! Confirmo mi asistencia para la boda 💒✨\n\n`
+  messageText += `*Nombre:* ${formData.value.fullName}\n`
+  messageText += `*Asistentes:* ${peopleText}\n`
 
-    isFormSubmitted.value = true
-  } catch (e) {
-    console.error('Error adding document: ', e)
+  if (formData.value.songField) {
+    messageText += `*Canción:* ${formData.value.songField}\n`
   }
+  if (formData.value.message) {
+    messageText += `*Nota:* ${formData.value.message}\n`
+  }
+
+  const encodedMessage = encodeURIComponent(messageText)
+  const whatsappUrl = phone
+    ? `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodedMessage}`
+    : `https://api.whatsapp.com/send?text=${encodedMessage}`
+
+  window.open(whatsappUrl, '_blank')
+
+  if (window.gtag) {
+    window.gtag('event', 'Form', {
+      event_category: 'Form',
+      event_label: 'WhatsApp RSVP',
+      value: formData.value,
+    })
+  }
+
+  isFormSubmitted.value = true
 }
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
-}
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
 </script>
 
 <style lang="scss">

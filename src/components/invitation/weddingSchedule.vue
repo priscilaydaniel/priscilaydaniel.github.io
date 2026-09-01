@@ -8,16 +8,18 @@
       <div class="wedding-schedule-list-item">
         <WeddingArchIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Ceremonia Civil</p>
-          <p class="wedding-schedule-list-item-time">13:00</p>
+          <p class="wedding-schedule-list-item-title">Ceremonia Religiosa</p>
+          <p class="wedding-schedule-list-item-description">En Capilla del Carmen</p>
+          <p class="wedding-schedule-list-item-time">18:00</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingAperitivosIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Aperitivos</p>
-          <p class="wedding-schedule-list-item-time">14:00</p>
+          <p class="wedding-schedule-list-item-title">Coctel</p>
+          <p class="wedding-schedule-list-item-description">En Quinta de Anza</p>
+          <p class="wedding-schedule-list-item-time">19:00</p>
         </div>
       </div>
 
@@ -25,7 +27,7 @@
         <WeddingBanqueteIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Banquete</p>
-          <p class="wedding-schedule-list-item-time">16:00</p>
+          <p class="wedding-schedule-list-item-time">21:00</p>
         </div>
       </div>
 
@@ -33,7 +35,7 @@
         <WeddingBaileIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Baile Nupcial</p>
-          <p class="wedding-schedule-list-item-time">18:30</p>
+          <p class="wedding-schedule-list-item-time">21:30</p>
         </div>
       </div>
 
@@ -41,7 +43,7 @@
         <WeddingDiscoIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">¡Fiesta!</p>
-          <p class="wedding-schedule-list-item-time">19:00</p>
+          <p class="wedding-schedule-list-item-time">22:00</p>
         </div>
       </div>
     </div>
@@ -151,6 +153,13 @@ onMounted(() => {
   font-style: normal;
 
   color: var(--text-color-primary);
+}
+
+.wedding-schedule-list-item-description {
+  font-size: 0.95em;
+  font-family: 'Merienda', cursive;
+  color: var(--text-color-primary);
+  opacity: 0.85;
 }
 
 .wedding-schedule-list-item-time {

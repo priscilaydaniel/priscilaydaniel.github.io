@@ -27,7 +27,7 @@
 
       <div class="wedding-place-info">
         <div class="wedding-place-info-name-address">
-          <span class="wedding-title-handwriting">Quinta de anza</span>
+          <span class="wedding-title-handwriting">Quinta de Anza</span>
           <div class="wedding-place-address">
             <span>Pedro Villegas Ramírez 2, 83070</span>
             <span>Col del Razo, 83070 Hermosillo, Son</span>
@@ -88,6 +88,10 @@ const weddingPlaceGmapsLink =
   flex-direction: column;
   align-items: center;
   gap: 0.6em;
+
+  .wedding-title-handwriting {
+    font-size: 1.7em;
+  }
 }
 
 .wedding-place-address {
@@ -95,7 +99,7 @@ const weddingPlaceGmapsLink =
   flex-direction: column;
   align-items: center;
   gap: 0.2em;
-  font-size: 1.2em;
+  font-size: 0.85em;
 }
 
 .wedding-place-info {

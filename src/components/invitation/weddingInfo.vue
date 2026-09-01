@@ -17,8 +17,7 @@
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
-          código de vestimenta es formal, aunque rogamos que llevéis calzado
-          cómodo para andar por césped o un segundo par para cambiaros allí.
+          código de vestimenta es formal.
         </p>
       </div>
       <div class="wedding-qa-item">
@@ -26,7 +25,7 @@
         <p class="wedding-a">
           Nos encantaría que este día fuera una oportunidad para que los adultos
           se diviertan como niños. Por eso, hemos decidido que sea una
-          celebración solo para adultos. ¡Gracias por tu comprensión!
+          celebración <strong class="text-black">solo para adultos</strong>. ¡Gracias por tu comprensión!
         </p>
       </div>
       <div class="wedding-qa-item">
@@ -36,8 +35,8 @@
         <p class="wedding-a">
           Nos encantaría contar contigo en este día tan especial. Lo ideal sería
           que nos confirmes lo antes posible para poder planear la mejor fiesta,
-          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del 3
-          de Noviembre.
+          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del 20
+          de Octubre.
         </p>
       </div>
     </div>
@@ -96,6 +95,11 @@ import preboda1 from '@/assets/preboda/preboda_1.jpeg'
     .wedding-a {
       font-size: 1.2em;
       text-align: center;
+
+      .text-black {
+        color: #000000;
+        font-weight: bold;
+      }
     }
   }
 }

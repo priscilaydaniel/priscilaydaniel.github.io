@@ -41,13 +41,7 @@ cp .env.example .env
 | Variable | Description |
 |----------|-------------|
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics measurement ID (format: G-XXXXXXXXXX) |
-| `VITE_APP_FIREBASE_API_KEY` | Firebase API key |
-| `VITE_APP_FIREBASE_AUTH_DOMAIN` | Firebase auth domain |
-| `VITE_APP_FIREBASE_PROJECT_ID` | Firebase project ID |
-| `VITE_APP_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket |
-| `VITE_APP_FIREBASE_MESSAGING_SENDER_ID` | Firebase messaging sender ID |
-| `VITE_APP_FIREBASE_APP_ID` | Firebase app ID |
-| `VITE_APP_FIREBASE_MEASUREMENT_ID` | Firebase measurement ID |
+| `VITE_WHATSAPP_PHONE` | WhatsApp phone number for RSVP responses (e.g. 5216623616028) |
 | `VITE_WEDDING_URL` | Your wedding website URL (for OG tags) |
 
 > **Note**: Variables prefixed with `VITE_` are exposed to the client-side code.
