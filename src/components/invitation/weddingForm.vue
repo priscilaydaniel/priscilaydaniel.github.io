@@ -10,28 +10,35 @@
           <div class="wedding-form-group">
             <WeddingInput v-model="formData.fullName" label="Nombre" required />
           </div>
-          <div class="wedding-form-group">
-            <WeddingSelect
-              v-model="formData.numberPeople"
-              :options="numberPeople"
-              default-value="1"
-              label="¿Cuántas personas son?"
-            />
-          </div>
 
-          <div class="wedding-form-group">
-            <WeddingInput
-              v-model="formData.songField"
-              label="¡Una canción que no puede faltar!
-"
-            />
-          </div>
+          <label class="wedding-form-no-attend">
+            <input type="checkbox" v-model="notAttending" />
+            <span>No podré asistir</span>
+          </label>
 
-          <div class="wedding-form-group">
-            <WeddingTextarea
-              v-model="formData.message"
-              label="¿Quieres decirnos algo más?"
-            />
+          <div class="wedding-form-collapsible" :class="{ collapsed: notAttending }">
+            <div class="wedding-form-group">
+              <WeddingSelect
+                v-model="formData.numberPeople"
+                :options="numberPeople"
+                default-value="1"
+                label="¿Cuántas personas son?"
+              />
+            </div>
+
+            <div class="wedding-form-group">
+              <WeddingInput
+                v-model="formData.songField"
+                label="¡Una canción que no puede faltar!"
+              />
+            </div>
+
+            <div class="wedding-form-group">
+              <WeddingTextarea
+                v-model="formData.message"
+                label="¿Quieres decirnos algo más?"
+              />
+            </div>
           </div>
 
           <div class="wedding-form-submit">
@@ -72,6 +79,7 @@ const formData = ref({
 })
 
 const isFormSubmitted = ref(false)
+const notAttending = ref(false)
 
 const numberPeople = [
   { label: 'Solo yo', value: 1 },
@@ -81,20 +89,27 @@ const numberPeople = [
 const submitForm = () => {
   const phone = import.meta.env.VITE_WHATSAPP_PHONE || '5216623616028'
 
-  const peopleText =
-    formData.value.numberPeople === 1
-      ? '1 (Solo yo)'
-      : `${formData.value.numberPeople} personas`
+  let messageText
 
-  let messageText = `¡Hola! Confirmo mi asistencia para la boda 💒✨\n\n`
-  messageText += `*Nombre:* ${formData.value.fullName}\n`
-  messageText += `*Asistentes:* ${peopleText}\n`
+  if (notAttending.value) {
+    messageText = `¡Hola! Lamentablemente no podré asistir a la boda 😢\n\n`
+    messageText += `*Nombre:* ${formData.value.fullName}\n`
+  } else {
+    const peopleText =
+      formData.value.numberPeople === 1
+        ? '1 (Solo yo)'
+        : `${formData.value.numberPeople} personas`
 
-  if (formData.value.songField) {
-    messageText += `*Canción:* ${formData.value.songField}\n`
-  }
-  if (formData.value.message) {
-    messageText += `*Nota:* ${formData.value.message}\n`
+    messageText = `¡Hola! Confirmo mi asistencia para la boda 💒✨\n\n`
+    messageText += `*Nombre:* ${formData.value.fullName}\n`
+    messageText += `*Asistentes:* ${peopleText}\n`
+
+    if (formData.value.songField) {
+      messageText += `*Canción:* ${formData.value.songField}\n`
+    }
+    if (formData.value.message) {
+      messageText += `*Nota:* ${formData.value.message}\n`
+    }
   }
 
   const encodedMessage = encodeURIComponent(messageText)
@@ -131,6 +146,44 @@ const submitForm = () => {
     flex-direction: column;
     gap: 1em;
     padding: 2em 3em;
+  }
+
+  .wedding-form-no-attend {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    cursor: pointer;
+    user-select: none;
+
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      min-height: unset;
+      accent-color: var(--pomp-and-power-middle);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 0.95em;
+      color: var(--text-color-primary);
+    }
+  }
+
+  .wedding-form-collapsible {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow: hidden;
+    max-height: 600px;
+    opacity: 1;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+
+    &.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   .wedding-form-submit {
