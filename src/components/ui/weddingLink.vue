@@ -15,13 +15,15 @@ const props = defineProps({
 
 <style scoped>
 .wedding-link {
-  display: inline-block;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   background-color: var(--link-color-primary);
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  padding: 0.5em 1.2em;
+  padding: 0.5em 1.4em;
   font-size: 1.2em;
   background-color: var(--button-color-primary);
   color: #fff;

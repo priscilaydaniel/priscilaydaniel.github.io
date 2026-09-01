@@ -277,7 +277,10 @@ import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 }
 
 header {
-  height: 100vh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  padding-bottom: 2em;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   position: relative;

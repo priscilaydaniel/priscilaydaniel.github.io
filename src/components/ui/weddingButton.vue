@@ -23,7 +23,11 @@ const handleClick = () => {
 
 <style scoped>
 .wedding-button {
-  padding: 0.5em 1.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.5em 1.4em;
   font-size: 1.4em;
   background-color: var(--button-color-primary);
   transition: background-color 0.3s ease;

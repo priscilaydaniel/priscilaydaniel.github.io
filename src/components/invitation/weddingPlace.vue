@@ -72,7 +72,10 @@ const weddingPlaceGmapsLink =
 }
 
 .wedding-place {
-  height: 100vh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  padding-bottom: 2em;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -80,7 +83,7 @@ const weddingPlaceGmapsLink =
 
 .wedding-place-photo-info-container {
   position: relative;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .wedding-place-info-name-address {

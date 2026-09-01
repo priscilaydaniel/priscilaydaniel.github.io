@@ -64,7 +64,7 @@ label {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 16px;
   outline: none;
   background-color: white;
   color: var(--text-color-primary);

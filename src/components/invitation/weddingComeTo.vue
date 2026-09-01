@@ -18,6 +18,7 @@
       <span>
         {{ messageComeTo2 }}
       </span>
+      <br>
     </div>
     <picture class="flower-green">
       <source :srcset="flowerGreenBig" type="image/webp" />
@@ -42,7 +43,10 @@ const weddingPlaceGmapsLink =
 
 <style lang="scss">
 .wedding-come {
-  height: 100vh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  padding: 3em 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
