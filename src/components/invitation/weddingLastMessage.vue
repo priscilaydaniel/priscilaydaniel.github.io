@@ -93,16 +93,19 @@ function daysUntil(targetDate) {
 .wedding-last-message {
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  position: relative;
 
   .wedding-last-message-content {
     position: relative;
     color: var(--text-color-primary);
     text-align: center;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     .wedding-last-message-ring {
-      padding: 2em;
+      padding: 1.5em 2em 0 2em;
       position: relative;
       display: inline-block;
       overflow: hidden;
@@ -121,6 +124,7 @@ function daysUntil(targetDate) {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 80%;
 
       span:first-child {
         font-size: 2.2em;
@@ -133,7 +137,7 @@ function daysUntil(targetDate) {
 
     .wedding-last-message-footer {
       position: absolute;
-      bottom: 0;
+      bottom: -90px;
       left: 0;
     }
   }
