@@ -17,7 +17,7 @@
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
-          código de vestimenta es formal.
+          código de vestimenta es  <strong class="text-black">formal</strong>.
         </p>
       </div>
       <div class="wedding-qa-item">
@@ -35,11 +35,62 @@
         <p class="wedding-a">
           Nos encantaría contar contigo en este día tan especial. Lo ideal sería
           que nos confirmes lo antes posible para poder planear la mejor fiesta,
-          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del 20
-          de Octubre.
+          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del  <strong class="text-black">20
+          de Octubre.</strong>
         </p>
       </div>
+      <div class="wedding-qa-item">
+        <h3 class="wedding-q">
+          Estacionamiento y transporte
+        </h3>
+        <p class="wedding-a">
+          Recomendamos usar applicaciones de transporte para acudir al evento ya que el
+          <strong class="text-black">estacionamiento es limitado</strong>
+        </p>
+      </div>
+      <div class="wedding-qa-item">
+        <h3 class="wedding-q">
+          Recomendaciones para foraneos
+        </h3>
+        <p class="wedding-a">
+          En caso de venir de fuera recomendamos las siguientes opciones de hospedaje:
+        </p>          
+        <ul class="wedding-recommendations">
+          <li>Hotel Lucerna</li>
+          <li>Araiza Hermosillo</li>
+          <li>Hotel Colonial</li>
+          <li>Hotel Suites Kino</li>
+        </ul> 
+        <p class="wedding-a">
+        Las siguientes opciones de bares:
+        </p>
+        <ul>
+          <li>Buquibichi</li>
+          <li>Bombarderos</li>
+          <li>La ruina</li>
+          <li>London pub</li>
+        </ul>
+        <p class="wedding-a">
+          Las siguientes recomendaciones aprovadas de tacos:
+        </p> 
+        <ul>
+          <li>Tacos del Sam</li>
+          <li>Tacos del Chava</li>
+          <li>Tacos del Chambarete</li>
+          <li>Tacos de Arturo</li>
+        </ul>
+        <p class="wedding-a">
+        Y las siguientes opciones de desayuno:
+        </p>
+        <ul>
+          <li>Gatogordo</li>
+          <li>El diputado y la Meche</li>
+          <li>Onza</li>
+          <li>Mulo</li>
+        </ul> 
+      </div>
     </div>
+    <!-- Fin de los items -->
     <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda1"
@@ -56,6 +107,13 @@ import preboda1 from '@/assets/preboda/preboda_1.jpeg'
 </script>
 
 <style lang="scss">
+ul {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  list-style-position: inside;
+}
+
 .wedding-qa {
   display: flex;
   flex-direction: column;
