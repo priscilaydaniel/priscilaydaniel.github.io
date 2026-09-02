@@ -1,5 +1,7 @@
 <template>
   <main id="main" class="layout">
+    <DesktopGuard />
+
     <transition name="fade" @before-enter="beforeEnter" @enter="enter">
       <div v-if="showWeddingInvitation" class="wedding-invitation">
         <InvitationMain />
@@ -18,6 +20,7 @@ import { ref } from 'vue'
 const showWeddingInvitation = ref(false)
 import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
 import InvitationMain from './components/invitation/weddingMain.vue'
+import DesktopGuard from './components/DesktopGuard.vue'
 
 const beforeEnter = (el) => {
   el.style.opacity = 0
