@@ -50,7 +50,7 @@
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          Recomendaciones para foraneos
+          Recomendaciones para foráneos
         </h3>
         <p class="wedding-a">
           En caso de venir de fuera recomendamos las siguientes opciones de hospedaje:
@@ -71,7 +71,7 @@
           <li>London pub</li>
         </ul>
         <p class="wedding-a">
-          Las siguientes recomendaciones aprovadas de tacos:
+          Las siguientes recomendaciones aprobadas de tacos:
         </p> 
         <ul>
           <li>Tacos del Sam</li>
