@@ -12,8 +12,8 @@
         </span>
       </div>
 
-      <div class="wedding-gift-card">
-        <div class="card-container" @click="flipCard" @mouseleave="unflipCard">
+      <div ref="fadeElements" class="wedding-gift-card">
+        <div class="card-container" @click="flipCard">
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
               <div class="card-gift-info-container">
@@ -67,11 +67,47 @@
       </div>
     </div>
   </div>
+  <p class="wedding-gift-cash-note">
+    ¿Un obsequio en efectivo entregado con todo el corazón y los mejores deseos?
+    ¡Sí, también lo aceptamos!
+  </p>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
+
+// Flip card when observed
+
+const fadeElements = ref([])
+
+onMounted(() => {
+  nextTick(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            isFlipped.value = true
+          }, 1695)
+          observer.unobserve(entry.target)
+        }
+      })
+    })
+
+    const elements = fadeElements.value.querySelectorAll(
+      '.card-container',
+    )
+
+    console.log(elements)
+
+    if (elements) {
+      elements.forEach((el) => {
+        observer.observe(el)
+      })
+    }
+  })
+})
+//end of flip card
 
 const isFlipped = ref(false)
 
@@ -89,7 +125,7 @@ const flipCard = () => {
 
   setTimeout(() => {
     isFlipped.value = false
-  }, 10000)
+  }, 40000)
 }
 
 const emailCopied = ref(false)
@@ -136,14 +172,16 @@ const fallbackCopy = (text, onSuccess) => {
   document.body.removeChild(textarea)
 }
 
-const unflipCard = () => {
-  isFlipped.value = false
-}
 </script>
 
 <style scoped>
+
+.wedding-gift-cash-note {
+  text-align: center; 
+}
+
 .wedding-gift {
-  min-height: 80vh;
+  min-height: 78vh;
   padding-bottom: 2em;
   box-sizing: border-box;
   display: flex;

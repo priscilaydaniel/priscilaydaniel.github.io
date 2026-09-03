@@ -23,7 +23,7 @@
       <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
         <p class="wedding-a">
-          Nos encantaría que este día fuera una oportunidad para que los adultos
+          Este día será una oportunidad para que los adultos
           se diviertan como niños. Por eso, hemos decidido que sea una
           celebración <strong class="text-black">solo para adultos</strong>. ¡Gracias por tu comprensión!
         </p>
@@ -33,8 +33,7 @@
           ¿Con cuánta antelación deberíamos confirmar nuestra asistencia?
         </h3>
         <p class="wedding-a">
-          Nos encantaría contar contigo en este día tan especial. Lo ideal sería
-          que nos confirmes lo antes posible para poder planear la mejor fiesta,
+          Lo ideal sería que nos confirmes lo antes posible para poder planear la mejor fiesta,
           pero si necesitas tiempo, te pedimos que nos lo comuniques antes del  <strong class="text-black">20
           de Octubre.</strong>
         </p>
