@@ -12,8 +12,8 @@
         </span>
       </div>
 
-      <div ref="fadeElements" class="wedding-gift-card">
-        <div class="card-container" @click="flipCard">
+      <div class="wedding-gift-card">
+        <div ref="cardContainerRef" class="card-container" @click="flipCard">
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
               <div class="card-gift-info-container">
@@ -74,38 +74,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
 
 // Flip card when observed
-
-const fadeElements = ref([])
+const cardContainerRef = ref(null)
 
 onMounted(() => {
-  nextTick(() => {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            isFlipped.value = true
-          }, 1695)
-          observer.unobserve(entry.target)
-        }
-      })
-    })
+  if (!cardContainerRef.value) return
 
-    const elements = fadeElements.value.querySelectorAll(
-      '.card-container',
-    )
-
-    console.log(elements)
-
-    if (elements) {
-      elements.forEach((el) => {
-        observer.observe(el)
-      })
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        isFlipped.value = true
+      }, 1698)
+      observer.disconnect()
     }
   })
+
+  observer.observe(cardContainerRef.value)
 })
 //end of flip card
 
