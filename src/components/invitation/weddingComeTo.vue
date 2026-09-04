@@ -23,7 +23,7 @@
     <picture class="flower-green">
       <source :srcset="flowerGreenBig" type="image/webp" />
 
-      <img :src="flowerGreenBig" alt="Example Image" />
+      <img :src="flowerGreenBig" alt="flowers" />
     </picture>
   </div>
 </template>
@@ -76,10 +76,14 @@ const weddingPlaceGmapsLink =
 .flower-green {
   position: absolute;
   bottom: -2%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   img {
     width: 100%;
-    height: 5em;
+    height: 6.1em;
     object-fit: cover;
   }
 }

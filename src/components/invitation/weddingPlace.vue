@@ -54,6 +54,11 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
+
+.wedding-section-title {
+  padding-top: 2.0em;
+}
+
 .wedding-place-flower {
   position: absolute;
   bottom: -14%;

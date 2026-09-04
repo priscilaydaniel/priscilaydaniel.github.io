@@ -329,7 +329,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: 4em;
+    font-size: 3.75em;
     font-family: 'Parisienne', cursive;
     font-weight: 500;
     color: var(--text-color-primary);
