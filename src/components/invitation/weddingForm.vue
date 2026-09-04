@@ -17,7 +17,7 @@
           </label>
 
           <div class="wedding-form-collapsible" :class="{ collapsed: notAttending }">
-            <div class="wedding-form-group">
+            <div v-if="hasInvitadoExtra" class="wedding-form-group">
               <WeddingSelect
                 v-model="formData.numberPeople"
                 :options="numberPeople"
@@ -80,6 +80,13 @@ const formData = ref({
 
 const isFormSubmitted = ref(false)
 const notAttending = ref(false)
+
+const getQueryParam = (param) => {
+  const search = window.location.search || (window.location.hash.includes('?') ? '?' + window.location.hash.split('?')[1] : '')
+  return new URLSearchParams(search).get(param)
+}
+
+const hasInvitadoExtra = ref(getQueryParam('invitadoExtra') === 'true')
 
 const numberPeople = [
   { label: 'Solo yo', value: 1 },
