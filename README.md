@@ -40,7 +40,6 @@ cp .env.example .env
 
 | Variable | Description |
 |----------|-------------|
-| `VITE_GA_MEASUREMENT_ID` | Google Analytics measurement ID (format: G-XXXXXXXXXX) |
 | `VITE_WHATSAPP_PHONE` | WhatsApp phone number for RSVP responses (e.g. 5216623616028) |
 | `VITE_WEDDING_URL` | Your wedding website URL (for OG tags) |
 

@@ -103,13 +103,6 @@ const flipCard = () => {
   
   isFlipped.value = true
 
-  if (window.gtag) {
-    window.gtag('event', 'Gift Card', {
-      event_category: 'Gift Card',
-      event_label: 'See info card details',
-    })
-  }
-
   setTimeout(() => {
     isFlipped.value = false
   }, 40000)

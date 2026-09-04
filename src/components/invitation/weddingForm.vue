@@ -126,14 +126,6 @@ const submitForm = () => {
 
   window.open(whatsappUrl, '_blank')
 
-  if (window.gtag) {
-    window.gtag('event', 'Form', {
-      event_category: 'Form',
-      event_label: 'WhatsApp RSVP',
-      value: formData.value,
-    })
-  }
-
   isFormSubmitted.value = true
 }
 </script>
