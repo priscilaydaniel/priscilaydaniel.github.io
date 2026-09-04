@@ -3,7 +3,9 @@
     <div :class="openClass">
       <div class="flap front"></div>
       <div class="flap top"></div>
-      <div class="letter"></div>
+      <div class="letter">
+        <span class="letter-text">{{ t.youAreInvited }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -11,6 +13,7 @@
 <script setup>
 import { debounce } from '@/utils/helper.js'
 import { computed, onMounted, ref } from 'vue'
+import { t } from '@/locale.js'
 
 const isOpen = ref(false)
 
@@ -142,26 +145,22 @@ const onAnimationEnvelopeDone = debounce(function () {
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  text-align: center;
 }
+
+.letter-text {;
+  font-family: 'Parisienne', cursive;
+  font-size: 1.6em;
+  color: var(--text-color-primary, #414042);
+  line-height: 1;
+}
+
 .envelope.open .letter {
   animation-name: remove;
-}
-
-.envelope .letter:after {
-  content: '';
-  position: absolute;
-  width: 192px;
-  height: 75%;
-  left: -1px;
-  background: #fff;
-  border: 1px solid #ccc;
-  animation-duration: 1s;
-  animation-delay: 4s;
-  animation-fill-mode: forwards;
-  -webkit-transform-origin-y: top;
-
-  transform-style: preserve-3d;
-  transform: rotateX(10deg);
 }
 
 .envelope .letter:after {

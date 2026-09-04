@@ -27,6 +27,9 @@ const fetchCountry = async () => {
 
 export const locale = {
   MX: {
+    // Envelope
+    youAreInvited: '¡Estás invitado!',
+
     // DesktopGuard
     desktopGuardTitle: 'Priscila & Daniel',
     desktopGuardSubtitle: '20 · XI · 2026',
@@ -130,6 +133,9 @@ export const locale = {
   },
 
   US: {
+    // Envelope
+    youAreInvited: "You're invited!",
+
     // DesktopGuard
     desktopGuardTitle: 'Priscila & Daniel',
     desktopGuardSubtitle: '20 · XI · 2026',
