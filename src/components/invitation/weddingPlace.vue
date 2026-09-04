@@ -13,7 +13,7 @@
     </picture>
 
     <div class="wedding-section-title">
-      <h2>{{ title }}</h2>
+      <h2>{{ t.placeTitle }}</h2>
     </div>
     <div class="wedding-place-photo-info-container">
       <div class="wedding-place-place-photo-container">
@@ -27,15 +27,15 @@
 
       <div class="wedding-place-info">
         <div class="wedding-place-info-name-address">
-          <span class="wedding-title-handwriting">Quinta de Anza</span>
+          <span class="wedding-title-handwriting">{{ t.placeName }}</span>
           <div class="wedding-place-address">
-            <span>Pedro Villegas Ramírez 2, 83070</span>
-            <span>Col del Razo, 83070 Hermosillo, Son</span>
+            <span>{{ t.placeAddressLine1 }}</span>
+            <span>{{ t.placeAddressLine2 }}</span>
           </div>
         </div>
 
         <div class="center">
-          <WeddingLink :to="weddingPlaceGmapsLink">Cómo llegar</WeddingLink>
+          <WeddingLink :to="weddingPlaceGmapsLink">{{ t.howToGetThere }}</WeddingLink>
         </div>
       </div>
     </div>
@@ -46,8 +46,7 @@
 import alboreaGarden from '@/assets/img/alborea-3.jpeg'
 import ramilleteFlower from '@/assets/flowers/flor-ramillete-2.webp'
 import WeddingLink from '../ui/weddingLink.vue'
-
-const title = 'Lugar de celebración'
+import { t } from '@/locale.js'
 
 const weddingPlaceGmapsLink =
   'https://maps.app.goo.gl/ciTGWS1BkmQaPdtr6'

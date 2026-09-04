@@ -9,83 +9,57 @@
     </div>
 
     <div class="wedding-section-title">
-      <h2>Más detalles</h2>
+      <h2>{{ t.infoTitle }}</h2>
     </div>
 
     <div class="wedding-qa-list">
       <div class="wedding-qa-item">
-        <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
-        <p class="wedding-a">
-          Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
-          código de vestimenta es  <strong class="text-black">formal</strong>.
-        </p>
+        <h3 class="wedding-q">{{ t.dressCodeQ }}</h3>
+        <p class="wedding-a" v-html="t.dressCodeA"></p>
       </div>
       <div class="wedding-qa-item">
-        <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
-        <p class="wedding-a">
-          Este día será una oportunidad para que los adultos
-          se diviertan como niños. Por eso, hemos decidido que sea una
-          celebración <strong class="text-black">solo para adultos</strong>. ¡Gracias por tu comprensión!
-        </p>
+        <h3 class="wedding-q">{{ t.kidsQ }}</h3>
+        <p class="wedding-a" v-html="t.kidsA"></p>
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          ¿Con cuánta antelación deberíamos confirmar nuestra asistencia?
+          {{ t.rsvpDeadlineQ }}
         </h3>
-        <p class="wedding-a">
-          Lo ideal sería que nos confirmes lo antes posible para poder planear la mejor fiesta,
-          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del  <strong class="text-black">20
-          de Octubre.</strong>
-        </p>
+        <p class="wedding-a" v-html="t.rsvpDeadlineA"></p>
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          Estacionamiento y transporte
+          {{ t.parkingQ }}
         </h3>
-        <p class="wedding-a">
-          Recomendamos usar applicaciones de transporte para acudir al evento ya que el
-          <strong class="text-black">estacionamiento es limitado</strong>
-        </p>
+        <p class="wedding-a" v-html="t.parkingA"></p>
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          Recomendaciones para foráneos
+          {{ t.outOfTownQ }}
         </h3>
         <p class="wedding-a">
-          En caso de venir de fuera recomendamos las siguientes opciones de hospedaje:
+          {{ t.outOfTownA }}
         </p>          
         <ul class="wedding-recommendations">
-          <li>Hotel Lucerna</li>
-          <li>Araiza Hermosillo</li>
-          <li>Hotel Colonial</li>
-          <li>Hotel Suites Kino</li>
+          <li v-for="(hotel, idx) in t.hotels" :key="idx">{{ hotel }}</li>
         </ul> 
         <p class="wedding-a">
-        Las siguientes opciones de bares:
+          {{ t.barsIntro }}
         </p>
         <ul>
-          <li>Buquibichi</li>
-          <li>Bombarderos</li>
-          <li>La ruina</li>
-          <li>London pub</li>
+          <li v-for="(bar, idx) in t.bars" :key="idx">{{ bar }}</li>
         </ul>
         <p class="wedding-a">
-          Las siguientes recomendaciones aprobadas de tacos:
+          {{ t.tacosIntro }}
         </p> 
         <ul>
-          <li>Tacos del Sam</li>
-          <li>Tacos del Chava</li>
-          <li>Tacos del Chambarete</li>
-          <li>Tacos de Arturo</li>
+          <li v-for="(taco, idx) in t.tacos" :key="idx">{{ taco }}</li>
         </ul>
         <p class="wedding-a">
-        Y las siguientes opciones de desayuno:
+          {{ t.breakfastIntro }}
         </p>
         <ul>
-          <li>Gatogordo</li>
-          <li>El diputado y la Meche</li>
-          <li>Onza</li>
-          <li>Mulo</li>
+          <li v-for="(item, idx) in t.breakfast" :key="idx">{{ item }}</li>
         </ul> 
       </div>
     </div>
@@ -103,6 +77,7 @@
 <script setup>
 import preboda4 from '@/assets/preboda/preboda_4.jpeg'
 import preboda1 from '@/assets/preboda/preboda_1.jpeg'
+import { t } from '@/locale.js'
 </script>
 
 <style lang="scss">

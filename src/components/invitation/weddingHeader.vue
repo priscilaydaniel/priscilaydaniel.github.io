@@ -44,7 +44,7 @@
       </div>
 
       <div class="header-info-container">
-        <span class="header-we-get-married">¡Nos casamos!</span>
+        <span class="header-we-get-married">{{ t.weGetMarried }}</span>
 
         <div class="header-couple-names-container">
           <div class="header-couple-first-name">
@@ -60,22 +60,22 @@
     </div>
     <div class="header-header-main-bottom">
       <div class="header-date-info">
-        <span class="date-month">NOVIEMBRE</span>
+        <span class="date-month">{{ t.month }}</span>
         <div class="grid-container header-date-central">
           <div class="grid-item day-week">
             <div class="lines-top-bottom">
-              <span>VIERNES</span>
+              <span>{{ t.dayOfWeek }}</span>
             </div>
           </div>
-          <div class="grid-item day-number">20</div>
+          <div class="grid-item day-number">{{ t.dayNumber }}</div>
           <div class="grid-item day-time">
             <div class="lines-top-bottom">
-              <span>18:00h.</span>
+              <span>{{ t.time }}</span>
             </div>
           </div>
         </div>
 
-        <span class="date-year">2026</span>
+        <span class="date-year">{{ t.year }}</span>
       </div>
     </div>
 
@@ -90,6 +90,7 @@ import preboda230 from '@/assets/preboda/preboda_main.jpg'
 import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
 import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
+import { t } from '@/locale.js'
 </script>
 
 <style lang="scss">

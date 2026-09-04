@@ -6,9 +6,9 @@
 
         <div class="wedding-last-message-text">
           <span v-if="isWeddingPast">{{ weddingPastMessage }}</span>
-          <span v-else>¡Te esperamos!</span>
-          <span v-if="isWeddingPast">¡Gracias por haberlo compartido con nosotros!</span>
-          <span v-else>Quedan {{ daysLeftToWedding }} días</span>
+          <span v-else>{{ t.weWaitForYou }}</span>
+          <span v-if="isWeddingPast">{{ t.thanksForSharing }}</span>
+          <span v-else>{{ t.daysLeftText(daysLeftToWedding) }}</span>
         </div>
       </div>
       <div class="wedding-last-message-footer">
@@ -26,6 +26,7 @@
 import { ref, computed } from 'vue'
 import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
 import flowerFooter from '@/assets/flowers/flor-wedding-footer.webp'
+import { t } from '@/locale.js'
 
 const WEDDING_DATE = '2026-11-20'
 
@@ -38,16 +39,16 @@ const weddingPastMessage = computed(() => {
   
   const parts = []
   if (years > 0) {
-    parts.push(`${years} ${years === 1 ? 'año' : 'años'}`)
+    parts.push(`${years} ${years === 1 ? t.value.yearSingular : t.value.yearPlural}`)
   }
   if (months > 0) {
-    parts.push(`${months} ${months === 1 ? 'mes' : 'meses'}`)
+    parts.push(`${months} ${months === 1 ? t.value.monthSingular : t.value.monthPlural}`)
   }
   if (days > 0 || parts.length === 0) {
-    parts.push(`${days} ${days === 1 ? 'día' : 'días'}`)
+    parts.push(`${days} ${days === 1 ? t.value.daySingular : t.value.dayPlural}`)
   }
   
-  return `Hace ${parts.join(', ')}`
+  return t.value.agoText(parts.join(', '))
 })
 
 function getExactTimeSinceWedding(dateString) {

@@ -1,14 +1,13 @@
 <template>
   <div class="wedding-gift">
     <div class="wedding-section-title">
-      <h2>Regalo de bodas</h2>
+      <h2>{{ t.giftTitle }}</h2>
     </div>
 
     <div class="wedding-gift-content">
       <div class="wedding-gift-content-message">
         <span>
-          Lo más importante para nosotros es compartir este día tan especial
-          contigo, pero si quieres tener un detalle:
+          {{ t.giftMessage }}
         </span>
       </div>
 
@@ -22,12 +21,12 @@
             </div>
             <div class="back">
               <div class="card-gift-info-container">
-                <span class="card-thanks">¡Muchas gracias!</span>
+                <span class="card-thanks">{{ t.giftThanks }}</span>
 
                 <div class="gift-options">
                   <!-- Liverpool -->
                   <div class="gift-option">
-                    <span class="gift-option-label">Mesa de regalos</span>
+                    <span class="gift-option-label">{{ t.registryLabel }}</span>
                     <a
                       href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60026882"
                       target="_blank"
@@ -35,13 +34,13 @@
                       class="mesa-link"
                       @click.stop
                     >
-                      Liverpool
+                      {{ t.liverpoolButton }}
                     </a>
                   </div>
 
                   <!-- Amazon -->
                   <div class="gift-option">
-                    <span class="gift-option-label">Gift card Amazon</span>
+                    <span class="gift-option-label">{{ t.amazonLabel }}</span>
                     <a
                       href="https://www.amazon.com.mx/Amazon-eGift-Card-Amazon-Logo-Animated/dp/B07PMMFSPC/?th=1&amp;gpo=300"
                       target="_blank"
@@ -49,14 +48,14 @@
                       class="mesa-link amazon-link"
                       @click.stop
                     >
-                      Amazon
+                      {{ t.amazonButton }}
                     </a>
                     <button
                       class="email-copy-btn"
                       @click.stop="copyEmail"
                       :class="{ copied: emailCopied }"
                     >
-                      <span class="email-text">{{ emailCopied ? '¡Copiado!' : 'newnowave@gmail.com' }}</span>
+                      <span class="email-text">{{ emailCopied ? t.copiedText : 'newnowave@gmail.com' }}</span>
                     </button>
                   </div>
                 </div>
@@ -68,14 +67,14 @@
     </div>
   </div>
   <p class="wedding-gift-cash-note">
-    ¿Un obsequio en efectivo entregado con todo el corazón y los mejores deseos?
-    ¡Sí, también lo aceptamos!
+    {{ t.cashNote }}
   </p>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
+import { t } from '@/locale.js'
 
 // Flip card when observed
 const cardContainerRef = ref(null)

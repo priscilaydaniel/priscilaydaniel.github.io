@@ -1,49 +1,49 @@
 <template>
   <div class="wedding-schedule">
     <div class="wedding-section-title">
-      <h2>Itinerario</h2>
+      <h2>{{ t.scheduleTitle }}</h2>
     </div>
 
     <div ref="fadeElements" class="wedding-schedule-list">
       <div class="wedding-schedule-list-item">
         <WeddingArchIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Ceremonia Religiosa</p>
-          <p class="wedding-schedule-list-item-description">En Capilla del Carmen</p>
-          <p class="wedding-schedule-list-item-time">18:00</p>
+          <p class="wedding-schedule-list-item-title">{{ t.ceremonyTitle }}</p>
+          <p class="wedding-schedule-list-item-description">{{ t.ceremonyDesc }}</p>
+          <p class="wedding-schedule-list-item-time">{{ t.ceremonyTime }}</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingAperitivosIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Coctel</p>
-          <p class="wedding-schedule-list-item-description">En Quinta de Anza</p>
-          <p class="wedding-schedule-list-item-time">19:00</p>
+          <p class="wedding-schedule-list-item-title">{{ t.cocktailTitle }}</p>
+          <p class="wedding-schedule-list-item-description">{{ t.cocktailDesc }}</p>
+          <p class="wedding-schedule-list-item-time">{{ t.cocktailTime }}</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingBanqueteIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Banquete</p>
-          <p class="wedding-schedule-list-item-time">21:00</p>
+          <p class="wedding-schedule-list-item-title">{{ t.banquetTitle }}</p>
+          <p class="wedding-schedule-list-item-time">{{ t.banquetTime }}</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingBaileIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Baile Nupcial</p>
-          <p class="wedding-schedule-list-item-time">21:30</p>
+          <p class="wedding-schedule-list-item-title">{{ t.firstDanceTitle }}</p>
+          <p class="wedding-schedule-list-item-time">{{ t.firstDanceTime }}</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingDiscoIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">¡Fiesta!</p>
-          <p class="wedding-schedule-list-item-time">22:00</p>
+          <p class="wedding-schedule-list-item-title">{{ t.partyTitle }}</p>
+          <p class="wedding-schedule-list-item-time">{{ t.partyTime }}</p>
         </div>
       </div>
     </div>
@@ -52,6 +52,7 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
+import { t } from '@/locale.js'
 
 import WeddingArchIcon from '@/assets/svg/wedding-arch.svg'
 import WeddingAperitivosIcon from '@/assets/svg/wedding-aperitivos.svg'

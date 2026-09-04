@@ -5,7 +5,7 @@
     :class="{ 'wedding-button': true, 'full-width': fullWidth }"
     @click="handleClick"
   >
-    {{ label }}
+    <slot>{{ label }}</slot>
   </button>
 </template>
 

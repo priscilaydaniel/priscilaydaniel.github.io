@@ -8,14 +8,10 @@
       </div>
 
       <div class="desktop-guard-text">
-        <h1 class="desktop-guard-title">Priscila & Daniel</h1>
-        <p class="desktop-guard-subtitle">20 · XI · 2026</p>
+        <h1 class="desktop-guard-title">{{ t.desktopGuardTitle }}</h1>
+        <p class="desktop-guard-subtitle">{{ t.desktopGuardSubtitle }}</p>
         <div class="desktop-guard-divider"></div>
-        <p class="desktop-guard-message">
-          Esta invitación fue diseñada<br />
-          con mucho cariño para<br />
-          <strong>teléfono móvil</strong>
-        </p>
+        <p class="desktop-guard-message" v-html="t.desktopGuardMessage"></p>
         <div class="desktop-guard-phone-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
@@ -23,12 +19,16 @@
           </svg>
         </div>
         <p class="desktop-guard-hint">
-          Por favor ábrela desde tu celular
+          {{ t.desktopGuardHint }}
         </p>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { t } from '@/locale.js'
+</script>
 
 <style scoped>
 .desktop-guard {

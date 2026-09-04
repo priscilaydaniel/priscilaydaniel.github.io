@@ -1,50 +1,50 @@
 <template>
   <div class="wedding-form-container">
     <div class="wedding-section-title wedding-form-title-space">
-      <h2>Confírmanos tu asistencia</h2>
+      <h2>{{ t.formTitle }}</h2>
     </div>
 
     <div class="wedding-form-card">
       <form @submit.prevent="submitForm">
         <div class="wedding-form">
           <div class="wedding-form-group">
-            <WeddingInput v-model="formData.fullName" label="Nombre" required />
+            <WeddingInput v-model="formData.fullName" :label="t.nameLabel" required />
           </div>
 
           <label class="wedding-form-no-attend">
             <input type="checkbox" v-model="notAttending" />
-            <span>No podré asistir</span>
+            <span>{{ t.cannotAttend }}</span>
           </label>
 
           <div class="wedding-form-collapsible" :class="{ collapsed: notAttending }">
             <div v-if="hasInvitadoExtra" class="wedding-form-group">
               <WeddingSelect
                 v-model="formData.numberPeople"
-                :options="numberPeople"
+                :options="numberPeopleOptions"
                 default-value="1"
-                label="¿Cuántas personas son?"
+                :label="t.howManyPeople"
               />
             </div>
 
             <div class="wedding-form-group">
               <WeddingInput
                 v-model="formData.songField"
-                label="¡Una canción que no puede faltar!"
+                :label="t.mustHaveSong"
               />
             </div>
 
             <div class="wedding-form-group">
               <WeddingTextarea
                 v-model="formData.message"
-                label="¿Quieres decirnos algo más?"
+                :label="t.anythingElse"
               />
             </div>
           </div>
 
           <div class="wedding-form-submit">
-            <WeddingButton v-if="!isFormSubmitted">Enviar</WeddingButton>
+            <WeddingButton v-if="!isFormSubmitted">{{ t.sendButton }}</WeddingButton>
             <div v-else class="wedding-form-thanks">
-              ¡Gracias por enviarnos tu información!
+              {{ t.thanksFormSubmitted }}
             </div>
           </div>
         </div>
@@ -64,7 +64,8 @@
 
 <script setup>
 import preboda2 from '@/assets/preboda/preboda_2.jpeg'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { t } from '@/locale.js'
 
 import WeddingInput from '../ui/weddingInput.vue'
 import WeddingSelect from '../ui/weddingSelect.vue'
@@ -88,10 +89,10 @@ const getQueryParam = (param) => {
 
 const hasInvitadoExtra = ref(getQueryParam('invitadoExtra') === 'true')
 
-const numberPeople = [
-  { label: 'Solo yo', value: 1 },
-  { label: 'Seremos 2', value: 2 },
-]
+const numberPeopleOptions = computed(() => [
+  { label: t.value.personJustMe, value: 1 },
+  { label: t.value.personTwo, value: 2 },
+])
 
 const submitForm = () => {
   const phone = import.meta.env.VITE_WHATSAPP_PHONE || '5216623616028'
@@ -99,23 +100,23 @@ const submitForm = () => {
   let messageText
 
   if (notAttending.value) {
-    messageText = `¡Hola! Lamentablemente no podré asistir a la boda 😢\n\n`
-    messageText += `*Nombre:* ${formData.value.fullName}\n`
+    messageText = `${t.value.whatsappNotAttending}\n\n`
+    messageText += `*${t.value.whatsappName}* ${formData.value.fullName}\n`
   } else {
     const peopleText =
       formData.value.numberPeople === 1
-        ? '1 (Solo yo)'
-        : `${formData.value.numberPeople} personas`
+        ? `1 (${t.value.personJustMe})`
+        : `${formData.value.numberPeople} ${t.value.personTwo}`
 
-    messageText = `¡Hola! Confirmo mi asistencia para la boda 💒✨\n\n`
-    messageText += `*Nombre:* ${formData.value.fullName}\n`
-    messageText += `*Asistentes:* ${peopleText}\n`
+    messageText = `${t.value.whatsappAttending}\n\n`
+    messageText += `*${t.value.whatsappName}* ${formData.value.fullName}\n`
+    messageText += `*${t.value.whatsappAttendees}* ${peopleText}\n`
 
     if (formData.value.songField) {
-      messageText += `*Canción:* ${formData.value.songField}\n`
+      messageText += `*${t.value.whatsappSong}* ${formData.value.songField}\n`
     }
     if (formData.value.message) {
-      messageText += `*Nota:* ${formData.value.message}\n`
+      messageText += `*${t.value.whatsappNote}* ${formData.value.message}\n`
     }
   }
 
