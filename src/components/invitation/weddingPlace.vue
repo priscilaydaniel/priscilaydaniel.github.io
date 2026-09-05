@@ -60,7 +60,7 @@ const weddingPlaceGmapsLink =
 
 .wedding-place-flower {
   position: absolute;
-  bottom: -19%;
+  bottom: -21%;
   width: 7em;
   height: auto;
   z-index: 1;
@@ -105,12 +105,12 @@ const weddingPlaceGmapsLink =
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2em;
+  gap: 0.14em;
   font-size: 0.85em;
 }
 
 .wedding-place-info {
-  padding: 0.9em;
+  padding: 0.7em;
   display: flex;
   flex-direction: column;
   align-items: center;
