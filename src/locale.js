@@ -77,7 +77,7 @@ export const locale = {
     kidsQ: '¿Puedo traer a mis hijos?',
     kidsA: 'Este día será una oportunidad para que los adultos se diviertan como niños. Por eso, hemos decidido que sea una celebración <strong class="text-black">solo para adultos</strong>. ¡Gracias por tu comprensión!',
     rsvpDeadlineQ: '¿Con cuánta antelación deberíamos confirmar nuestra asistencia?',
-    rsvpDeadlineA: 'Lo ideal sería que nos confirmes lo antes posible para poder planear la mejor fiesta, pero si necesitas tiempo, te pedimos que nos lo comuniques antes del <strong class="text-black">20 de Octubre.</strong>',
+    rsvpDeadlineA: 'Lo ideal sería que nos confirmes lo antes posible para poder planear la mejor fiesta, pero si necesitas tiempo, te pedimos que nos lo comuniques antes del <strong class="text-black">05 de Octubre.</strong>',
     parkingQ: 'Estacionamiento y transporte',
     parkingA: 'Recomendamos usar aplicaciones de transporte para acudir al evento ya que el <strong class="text-black">estacionamiento es limitado</strong>',
     outOfTownQ: 'Recomendaciones para foráneos',
