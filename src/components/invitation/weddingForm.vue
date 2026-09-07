@@ -1,5 +1,5 @@
 <template>
-  <div class="wedding-form-container">
+  <div id="rsvp" class="wedding-form-container">
     <div class="wedding-section-title wedding-form-title-space">
       <h2>{{ t.formTitle }}</h2>
     </div>
